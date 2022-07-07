@@ -3,6 +3,7 @@ import { Route, Routes, useNavigate } from "react-router-dom";
 import Login from "./components/Login";
 import UserProfile from "./components/UserProfile";
 import Home from "./container/Home";
+import TuitionDetail from "./components/TuitionDetail";
 
 const App = () => {
   const navigate = useNavigate();
@@ -19,6 +20,7 @@ const App = () => {
     <Routes>
       <Route path="login" element={<Login />} />
       <Route path="UserProfile" element={<UserProfile />} />
+      <Route path="TuitionDetail" element={<TuitionDetail />} />
       <Route path="/*" element={<Home />} />
     </Routes>
   );
