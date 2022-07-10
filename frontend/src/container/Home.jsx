@@ -11,13 +11,13 @@ import {
 } from "../utils/data";
 
 const activeGreenBtnStyles =
-  "bg-green-500 hover:bg-green-600 mt-2 text-white font-bold p-3 rounded-full w-1/3 outline-none font-messiri";
+  "transition ease-in-out delay-250 bg-green-500 hover:-translate-y-1 hover:scale-110 duration-300 hover:bg-green-600 mt-2 text-white font-bold p-3 rounded-full w-1/3 outline-none font-messiri";
 
 const activeRedBtnStyles =
-  "bg-red-500 hover:bg-red-600 mt-2 text-white font-bold p-3 rounded-full w-1/3 outline-none font-messiri";
+  "transition ease-in-out delay-250 hover:-translate-y-1 hover:scale-110 duration-300 bg-red-500 hover:bg-red-600 mt-2 text-white font-bold p-3 rounded-full w-1/3 outline-none font-messiri";
   
 const notActiveBtnStyles =
-  "bg-primary mr-4 mt-2 text-black font-bold p-3 rounded-full w-25 outline-none font-messiri";
+  "transition ease-in-out delay-250  hover:-translate-y-1 hover:scale-110 duration-300 bg-primary mr-6 ml-6 mt-2 text-black font-bold p-3 rounded-full w-25 outline-none font-messiri";
 
 const Home = () => {
   const [tutionFees, setTutionFees] = useState({});
@@ -109,32 +109,32 @@ const Home = () => {
             &#2547; Paid
           </button>
         </div>
-        <div className="grid grid-cols-3 gap-4 p-4">
+        <div className="grid md:grid-cols-3 gap-4 p-4">
           <Link to="/TuitionDetail">
-            <div className="bg-white font-messiri text-center shadow-lg rounded-lg h-20 hover:bg-green-300 hover:text-lg hover:font-bold">
-              <h1 className="p-6">1st Semester</h1>
+            <div className="bg-white font-messiri text-center shadow-2xl rounded-2xl h-40 hover:bg-green-300 hover:text-lg hover:font-bold hover:animate-bounce">
+              <h1 className="py-16">1st Semester</h1>
             </div>
           </Link>
-          <div className="bg-white font-messiri text-center shadow-lg rounded-lg h-20 hover:bg-green-300 hover:text-lg hover:font-bold">
-            <h1 className="p-6">2nd Semester</h1>
+          <div className="hover:animate-bounce bg-white font-messiri text-center shadow-2xl rounded-2xl h-40 hover:bg-green-300 hover:text-lg hover:font-bold">
+            <h1 className="py-16">2nd Semester</h1>
           </div>
-          <div className="bg-white font-messiri text-center shadow-lg rounded-lg h-20 hover:bg-green-300 hover:text-lg hover:font-bold">
-            <h1 className="p-6">3rd Semester</h1>
+          <div className="hover:animate-bounce bg-white font-messiri text-center shadow-2xl rounded-2xl h-40 hover:bg-green-300 hover:text-lg hover:font-bold">
+            <h1 className="py-16">3rd Semester</h1>
           </div>
-          <div className="bg-white font-messiri text-center shadow-lg rounded-lg h-20 hover:bg-green-300 hover:text-lg hover:font-bold">
-            <h1 className="p-6">4th Semester</h1>
+          <div className="hover:animate-bounce bg-white font-messiri text-center shadow-2xl rounded-2xl h-40 hover:bg-green-300 hover:text-lg hover:font-bold">
+            <h1 className="py-16">4th Semester</h1>
           </div>
-          <div className="bg-white font-messiri text-center shadow-lg rounded-lg h-20 hover:bg-green-300 hover:text-lg hover:font-bold">
-            <h1 className="p-6">5th Semester</h1>
+          <div className="hover:animate-bounce bg-white font-messiri text-center shadow-2xl rounded-2xl h-40 hover:bg-green-300 hover:text-lg hover:font-bold">
+            <h1 className="py-16">5th Semester</h1>
           </div>
-          <div className="bg-white font-messiri text-center shadow-lg rounded-lg h-20 hover:bg-green-300 hover:text-lg hover:font-bold">
-            <h1 className="p-6">6th Semester</h1>
+          <div className="hover:animate-bounce bg-white font-messiri text-center shadow-2xl rounded-2xl h-40 hover:bg-green-300 hover:text-lg hover:font-bold">
+            <h1 className="py-16">6th Semester</h1>
           </div>
-          <div className="bg-white font-messiri text-center shadow-lg rounded-lg h-20 hover:bg-green-300 hover:text-lg hover:font-bold">
-            <h1 className="p-6">7th Semester</h1>
+          <div className="hover:animate-bounce bg-white font-messiri text-center shadow-2xl rounded-2xl h-40 hover:bg-green-300 hover:text-lg hover:font-bold">
+            <h1 className="py-16">7th Semester</h1>
           </div>
-          <div className="bg-white font-messiri text-center shadow-lg rounded-lg h-20 hover:bg-green-300 hover:text-lg hover:font-bold">
-            <h1 className="p-6">8th Semester</h1>
+          <div className="hover:animate-bounce bg-white font-messiri text-center shadow-2xl rounded-2xl h-40 hover:bg-green-300 hover:text-lg hover:font-bold">
+            <h1 className="py-16">8th Semester</h1>
           </div>
         </div>
       </div>
