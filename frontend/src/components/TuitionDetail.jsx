@@ -1,11 +1,16 @@
 import { React, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const TuitionDetail = () => {
   const [payed, setPayed] = useState(false);
 
+  const navigate = useNavigate();
+
   function handlePayment(){
     setPayed(true);
+    setTimeout(function () {
+      navigate("/Success");
+    }, 5000);
   }
 
   return (
@@ -77,12 +82,11 @@ const TuitionDetail = () => {
                 d="M11 11V9a2 2 0 00-2-2m2 4v4a2 2 0 104 0v-1m-4-3H9m2 0h4m6 1a9 9 0 11-18 0 9 9 0 0118 0z"
               />
             </svg>
-            {payed ? "Payed" : "Pay Fee"}
+            {payed ? "Paying..." : "Pay Fee"}
           </button>
         </div>
-        <div className="mt-20 p-5 bg-green-200 rounded-lg">Your Payment Was Successfull</div>
       </div>
-      <footer className="mt-5">
+      <footer className="mt-20">
         <div className="text-center p-4 text-gray-700">© 2022 Copyright</div>
       </footer>
     </div>
