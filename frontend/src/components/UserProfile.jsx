@@ -260,6 +260,9 @@ const UserProfile = () => {
             </table>
           </div>
         </div>
+        <footer className="mt-5">
+          <div className="text-center p-4 text-gray-700">© 2022 Copyright</div>
+        </footer>
       </div>
     </div>
   );

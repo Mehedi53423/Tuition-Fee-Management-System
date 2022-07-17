@@ -11,7 +11,7 @@ import {
 } from "../utils/data";
 
 const activeGreenBtnStyles =
-  "transition ease-in-out delay-250 bg-green-500 hover:-translate-y-1 hover:scale-110 duration-300 hover:bg-green-600 mt-2 text-white font-bold p-3 rounded-full w-1/3 outline-none font-messiri";
+  "transition ease-in-out delay-250 hover:-translate-y-1 hover:scale-110 duration-300 bg-green-500 hover:bg-green-600 mt-2 text-white font-bold p-3 rounded-full w-1/3 outline-none font-messiri";
 
 const activeRedBtnStyles =
   "transition ease-in-out delay-250 hover:-translate-y-1 hover:scale-110 duration-300 bg-red-500 hover:bg-red-600 mt-2 text-white font-bold p-3 rounded-full w-1/3 outline-none font-messiri";
@@ -138,6 +138,9 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <footer className="mt-5">
+        <div className="text-center p-4 text-gray-700">© 2022 Copyright</div>
+      </footer>
     </div>
   );
 };
