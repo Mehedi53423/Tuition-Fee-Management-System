@@ -139,7 +139,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <footer className="mt-5">
+      <footer className="mt-5 border">
         <div
           className="md:fixed inset-x-0 bottom-0 text-center p-4 text-gray-700"
         >

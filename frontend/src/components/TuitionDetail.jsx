@@ -24,11 +24,11 @@ const TuitionDetail = () => {
           </b>
         </Link>
       </div>
-      <div className="main grid place-items-center mt-20">
-        <div className="card bg-white flex flex-col justify-center p-4 shadow-lg rounded-2xl md:w-1/3 font-messiri">
+      <div className="grid place-items-center mt-20 md:h-1/2">
+        <div className="card bg-white flex flex-col justify-center p-8 shadow-lg rounded-2xl md:w-1/3 font-messiri">
           <h2 className="text-2xl font-bold text-center pb-2">Session 2022</h2>
           <hr />
-          <table className="text-xl">
+          <table className="text-2xl">
             <tr>
               <td className="">
                 <h2 className="font-bold">Semester No.</h2>
@@ -64,7 +64,7 @@ const TuitionDetail = () => {
           </table>
           <hr className="pb-2" />
           <button
-            className="flex justify-center hover:bg-green-500 text-green-700 font-semibold hover:text-white py-1 px-2 border border-green-500 rounded-lg"
+            className="flex justify-center hover:bg-green-500 text-green-700 font-semibold hover:text-white mt-6 py-2 px-2 border border-green-500 rounded-lg"
             type="button"
             onClick={handlePayment}
           >
@@ -97,7 +97,7 @@ const TuitionDetail = () => {
           </button>
         </div>
       </div>
-      <footer className="mt-5">
+      <footer className="mt-5 border">
         <div className="fixed inset-x-0 bottom-0 text-center p-4 text-gray-700">
           © 2022 Copyright
         </div>
