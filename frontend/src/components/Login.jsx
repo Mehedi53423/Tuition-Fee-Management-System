@@ -6,6 +6,7 @@ const Login = () => {
   const [userid, setUserId] = useState("");
   const [userpass, setUserPass] = useState("");
   const [realUser, setRealUser] = useState(true);
+  const [logging, setLogging] = useState(false);
 
   const navigate = useNavigate();
 
@@ -19,7 +20,10 @@ const Login = () => {
       .then((data) => {
         if (data.length > 0 && data[0].password === userpass) {
           localStorage.setItem("user", JSON.stringify(data[0]));
-          navigate("/");
+          setLogging(true);
+          setTimeout(function () {
+            navigate("/");
+          }, 3000);
         } else {
           setRealUser(false);
         }
@@ -119,7 +123,18 @@ const Login = () => {
                     d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"
                   />
                 </svg>
-                Login
+                {logging ? (
+                  <>
+                    Logging In...
+                    <svg
+                      className="spinner-border animate-spin inline-block w-7 h-7 ml-4 border-4 border-x-white border-b-white border-t-cyan-500 rounded-full"
+                      viewBox="0 0 24 24"
+                      role="status"
+                    ></svg>
+                  </>
+                ) : (
+                  <>Login</>
+                )}
               </button>
             </form>
             {realUser ? (

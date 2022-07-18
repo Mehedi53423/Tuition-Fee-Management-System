@@ -25,11 +25,11 @@ const TuitionDetail = () => {
         </Link>
       </div>
       <div className="grid place-items-center mt-20 md:h-1/2">
-        <div className="card bg-white flex flex-col justify-center p-8 shadow-lg rounded-2xl md:w-1/3 font-messiri">
-          <h2 className="text-2xl font-bold text-center pb-2">Session 2022</h2>
+        <div className="card bg-white flex flex-col justify-center p-20 shadow-2xl rounded-2xl md:w-1/3 font-messiri">
+          <h2 className="text-3xl font-bold text-center pb-2">Session 2022</h2>
           <hr />
-          <table className="text-2xl">
-            <tr>
+          <table className="text-2xl p-8">
+            <tr className="">
               <td className="">
                 <h2 className="font-bold">Semester No.</h2>
               </td>
