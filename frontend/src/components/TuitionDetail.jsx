@@ -64,7 +64,7 @@ const TuitionDetail = () => {
           </table>
           <hr className="pb-2" />
           <button
-            className="flex justify-center bg-transparent hover:bg-green-500 text-green-700 font-semibold hover:text-white py-1 px-2 border border-green-500 hover:border-transparent rounded-lg"
+            className="flex justify-center hover:bg-green-500 text-green-700 font-semibold hover:text-white py-1 px-2 border border-green-500 rounded-lg"
             type="button"
             onClick={handlePayment}
           >
@@ -82,12 +82,25 @@ const TuitionDetail = () => {
                 d="M11 11V9a2 2 0 00-2-2m2 4v4a2 2 0 104 0v-1m-4-3H9m2 0h4m6 1a9 9 0 11-18 0 9 9 0 0118 0z"
               />
             </svg>
-            {payed ? "Paying..." : "Pay Fee"}
+            {payed ? (
+              <>
+                Paying...
+                <svg
+                  className="spinner-border animate-spin inline-block w-5 h-5 ml-4 border-4 border-x-green-500 border-b-green-500 hover:border-t-green-500 hover:border-x-white hover:border-b-white rounded-full"
+                  viewBox="0 0 24 24"
+                  role="status"
+                ></svg>
+              </>
+            ) : (
+              "Pay Fee"
+            )}
           </button>
         </div>
       </div>
-      <footer className="mt-20">
-        <div className="text-center p-4 text-gray-700">© 2022 Copyright</div>
+      <footer className="mt-5">
+        <div className="fixed inset-x-0 bottom-0 text-center p-4 text-gray-700">
+          © 2022 Copyright
+        </div>
       </footer>
     </div>
   );
