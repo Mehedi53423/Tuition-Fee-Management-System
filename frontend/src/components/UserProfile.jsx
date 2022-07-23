@@ -261,7 +261,7 @@ const UserProfile = () => {
           </div>
         </div>
         <footer className="mt-5 border">
-          <div className="md:fixed inset-x-0 bottom-0 text-center p-4 text-gray-700">
+          <div className="lg:fixed inset-x-0 bottom-0 text-center p-4 text-gray-700">
             © 2022 Copyright
           </div>
         </footer>

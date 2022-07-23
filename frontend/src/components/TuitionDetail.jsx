@@ -24,11 +24,11 @@ const TuitionDetail = () => {
           </b>
         </Link>
       </div>
-      <div className="grid place-items-center mt-20 md:h-1/2">
-        <div className="card bg-white flex flex-col justify-center p-20 shadow-2xl rounded-2xl md:w-1/3 font-messiri">
-          <h2 className="text-3xl font-bold text-center pb-2">Session 2022</h2>
+      <div className="grid place-items-center mt-20 md:h-2/3 sm:p-2 md:p-0 lg:p-0">
+        <div className="card bg-white flex flex-col justify-center p-10 md:p-15 lg:p-20 shadow-2xl rounded-2xl sm:w-2/3 md:w-2/3 lg:w-1/3 h-full font-messiri">
+          <h2 className="text-3xl font-bold text-center pb-6">Session 2022</h2>
           <hr />
-          <table className="text-2xl p-8">
+          <table className="sm:text-xl md:text-2xl lg:text-2xl p-8">
             <tr className="">
               <td className="">
                 <h2 className="font-bold">Semester No.</h2>
@@ -98,7 +98,7 @@ const TuitionDetail = () => {
         </div>
       </div>
       <footer className="mt-5 border">
-        <div className="fixed inset-x-0 bottom-0 text-center p-4 text-gray-700">
+        <div className="lg:fixed inset-x-0 bottom-0 text-center p-4 text-gray-700">
           © 2022 Copyright
         </div>
       </footer>
