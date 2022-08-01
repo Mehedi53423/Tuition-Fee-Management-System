@@ -3,6 +3,18 @@ import { Link, useNavigate } from "react-router-dom";
 
 const TuitionDetail = () => {
   const [payed, setPayed] = useState(false);
+  const [sessionName, setsessionName] = useState();
+  const [semesterNo, setSemesterNo] = useState();
+  const [semesterFee, setSemesterFee] = useState();
+  const [tutionFee, setTutionFee] = useState();
+  const [totalFee, setTotalFee] = useState();
+
+  const User =
+    localStorage.getItem("user") !== "undefined"
+      ? JSON.parse(localStorage.getItem("user"))
+      : localStorage.clear();
+
+  const userid = User.userid;
 
   const navigate = useNavigate();
 
@@ -11,6 +23,20 @@ const TuitionDetail = () => {
     setTimeout(function () {
       navigate("/Success");
     }, 5000);
+  }
+
+  if (User) {
+    fetch("/getFees?user=" + userid)
+      .then((res) => res.json())
+      .then((fees) => {
+        setsessionName(fees[0].sessionName);
+        setSemesterNo(fees[0].semesterNo);
+        setSemesterFee(fees[0].semesterFee);
+        setTutionFee(fees[0].tuitionFeeOfSession);
+        setTotalFee(fees[0].totalFee);
+      });
+  } else {
+    console.log("Error");
   }
 
   return (
@@ -26,7 +52,7 @@ const TuitionDetail = () => {
       </div>
       <div className="grid place-items-center mt-20 md:h-2/3 sm:p-2 md:p-0 lg:p-0">
         <div className="card bg-white flex flex-col justify-center p-10 md:p-15 lg:p-20 shadow-2xl rounded-2xl sm:w-2/3 md:w-2/3 lg:w-1/3 h-full font-messiri">
-          <h2 className="text-3xl font-bold text-center pb-6">Session 2022</h2>
+          <h2 className="text-3xl font-bold text-center pb-6">{sessionName}</h2>
           <hr />
           <table className="sm:text-xl md:text-2xl lg:text-2xl p-8">
             <tr className="">
@@ -34,7 +60,7 @@ const TuitionDetail = () => {
                 <h2 className="font-bold">Semester No.</h2>
               </td>
               <td>
-                <h2 className="">: {}</h2>
+                <h2 className="">: {semesterNo}</h2>
               </td>
             </tr>
             <tr>
@@ -42,7 +68,7 @@ const TuitionDetail = () => {
                 <h2 className="font-bold">Tuition Fee</h2>
               </td>
               <td>
-                <h2>: {} &#2547;</h2>
+                <h2>: {tutionFee} &#2547;</h2>
               </td>
             </tr>
             <tr className="border-b">
@@ -50,7 +76,7 @@ const TuitionDetail = () => {
                 <h2 className="font-bold">Semester Fee</h2>
               </td>
               <td>
-                <h2>: {} &#2547;</h2>
+                <h2>: {semesterFee} &#2547;</h2>
               </td>
             </tr>
             <tr>
@@ -58,7 +84,7 @@ const TuitionDetail = () => {
                 <h2 className="font-bold">Total</h2>
               </td>
               <td>
-                <h2>: {} &#2547;</h2>
+                <h2>: {totalFee} &#2547;</h2>
               </td>
             </tr>
           </table>

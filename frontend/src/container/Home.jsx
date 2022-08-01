@@ -1,15 +1,6 @@
-import React, { useEffect, useState } from "react";
-//import { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import NavBar from "../components/NavBar";
-//import TuitionFee from "./TuitionFee";
-//import Sidebar from "../components/Sidebar";
-
-import {
-  userCreatedPinsQuery,
-  userQuery,
-  userSavedPinsQuery,
-} from "../utils/data";
 
 const activeGreenBtnStyles =
   "transition ease-in-out delay-250 hover:-translate-y-1 hover:scale-110 duration-300 bg-green-500 hover:bg-green-600 mt-2 text-white font-bold p-3 rounded-full w-1/3 outline-none font-messiri";

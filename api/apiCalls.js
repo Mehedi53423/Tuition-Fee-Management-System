@@ -17,19 +17,6 @@ functions.getProfile = (user) => {
   );
 };
 
-/*functions.getAllPosts = (user) => {
-  return sanityClient.fetch(`*[_type == "tuitionFee"]{
-    ...,
-    "username": author->username,
-    photo{
-      asset->{
-        _id,
-        url
-      }
-    }
-  }`);
-};*/
-
 functions.getFees = (user) => {
   return sanityClient.fetch(
     `*[_type == "tuitionFee" && userid == $userid]{
@@ -38,28 +25,5 @@ functions.getFees = (user) => {
     { userid: user }
   );
 };
-
-/*export const feedQuery = `*[_type == "pin"] | order(_createdAt desc) {
-    image{
-      asset->{
-        url
-      }
-    },
-        _id,
-        destination,
-        postedBy->{
-          _id,
-          userName,
-          image
-        },
-        save[]{
-          _key,
-          postedBy->{
-            _id,
-            userName,
-            image
-          },
-        },
-      } `;*/
 
 export default functions;
