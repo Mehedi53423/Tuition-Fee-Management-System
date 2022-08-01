@@ -34,7 +34,7 @@ const TuitionDetail = () => {
                 <h2 className="font-bold">Semester No.</h2>
               </td>
               <td>
-                <h2 className="">: 5th</h2>
+                <h2 className="">: {}</h2>
               </td>
             </tr>
             <tr>
@@ -42,7 +42,7 @@ const TuitionDetail = () => {
                 <h2 className="font-bold">Tuition Fee</h2>
               </td>
               <td>
-                <h2>: 5000 &#2547;</h2>
+                <h2>: {} &#2547;</h2>
               </td>
             </tr>
             <tr className="border-b">
@@ -50,7 +50,7 @@ const TuitionDetail = () => {
                 <h2 className="font-bold">Semester Fee</h2>
               </td>
               <td>
-                <h2>: 5000 &#2547;</h2>
+                <h2>: {} &#2547;</h2>
               </td>
             </tr>
             <tr>
@@ -58,7 +58,7 @@ const TuitionDetail = () => {
                 <h2 className="font-bold">Total</h2>
               </td>
               <td>
-                <h2>: 10000 &#2547;</h2>
+                <h2>: {} &#2547;</h2>
               </td>
             </tr>
           </table>
@@ -97,7 +97,7 @@ const TuitionDetail = () => {
           </button>
         </div>
       </div>
-      <footer className="mt-5 border">
+      <footer className="mt-5">
         <div className="lg:fixed inset-x-0 bottom-0 text-center p-4 text-gray-700">
           © 2022 Copyright
         </div>

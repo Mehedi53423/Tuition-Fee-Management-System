@@ -1,19 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { client } from "../client";
 import imageUrlBuilder from "@sanity/image-url";
 //import profilePlaceHolder from "../assets/profile_place_holder.png";
-import {
-  userQuery,
-} from "../utils/data";
 
 const UserProfile = () => {
-  const [user, setUser] = useState();
   const navigate = useNavigate();
-  const [profileData, setProfileData] = useState({});
-  const { userid } = useParams();
   const logout = () => {
     localStorage.clear();
     navigate("/login");
@@ -23,13 +16,6 @@ const UserProfile = () => {
     localStorage.getItem("user") !== "undefined"
       ? JSON.parse(localStorage.getItem("user"))
       : localStorage.clear();
-
-  useEffect(() => {
-    const query = userQuery(userid);
-    client.fetch(query).then((data) => {
-      setUser(data[0]);
-    });
-  }, [userid]);
 
   const builder = imageUrlBuilder(client);
 
@@ -78,7 +64,7 @@ const UserProfile = () => {
           <img
             className="rounded-full w-40 h-40  -mt-10 shadow-xl object-cover"
             src={urlFor(User.image).url()}
-            alt="userPic"
+            alt="User Pic"
           />
         </div>
         <h1 className="font-bold text-3xl text-center mt-3 pb-2 font-messiri">
@@ -260,7 +246,7 @@ const UserProfile = () => {
             </table>
           </div>
         </div>
-        <footer className="mt-5 border">
+        <footer className="mt-5">
           <div className="lg:fixed inset-x-0 bottom-0 text-center p-4 text-gray-700">
             © 2022 Copyright
           </div>

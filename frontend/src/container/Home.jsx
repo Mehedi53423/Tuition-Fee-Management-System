@@ -21,9 +21,10 @@ const notActiveBtnStyles =
   "transition ease-in-out delay-250  hover:-translate-y-1 hover:scale-110 duration-300 bg-primary mr-6 ml-6 mt-2 text-black font-bold p-3 rounded-full w-25 outline-none font-messiri";
 
 const Home = () => {
-  const [tutionFees, setTutionFees] = useState({});
+  const [tutionFees, setTutionFees] = useState();
   const [text, setText] = useState("Not Paid");
   const [activeBtn, setActiveBtn] = useState("Not Paid");
+  const [tutionFeesNo, setTutionFeesNo] = useState();
   //const navigate = useNavigate();
 
   const User =
@@ -33,17 +34,21 @@ const Home = () => {
   
   const userid = User.userid;
 
-  /*if(User){
-    fetch("getFees?user=" + userid)
+  if(User){
+    fetch("/getFees?user=" + userid)
     .then((res) => res.json())
     .then((fees) => {
-      setTutionFees(fees);
+      setTutionFees(fees[0].sessionName);
+      setTutionFeesNo(fees.length);
     })
-    console.log(tutionFees);
   }
   else{
     console.log("Error");
-  }*/
+  }
+
+  // const products = ["orange", "apple", "watermelon"];
+
+  // const list = products.map((product) => <li key={product}>{product}</li>);
 
   /*useEffect(() => {
     const query = userQuery(userId);
@@ -110,36 +115,22 @@ const Home = () => {
             &#2547; Paid
           </button>
         </div>
+
         <div className="grid md:grid-cols-3 gap-4 p-4">
+          {/* {list} */}
+
+          {/* {tutionFee.map((tf, index) => (
+            <h1>{console.log(tf.sessionName)}</h1>
+          ))} */}
+
           <Link to="/TuitionDetail">
             <div className="bg-white font-messiri text-center shadow-2xl rounded-2xl h-40 hover:bg-green-300 hover:text-lg hover:font-bold hover:animate-bounce">
-              <h1 className="py-16">1st Semester</h1>
+              <h1 className="py-16">{tutionFees}</h1>
             </div>
           </Link>
-          <div className="hover:animate-bounce bg-white font-messiri text-center shadow-2xl rounded-2xl h-40 hover:bg-green-300 hover:text-lg hover:font-bold">
-            <h1 className="py-16">2nd Semester</h1>
-          </div>
-          <div className="hover:animate-bounce bg-white font-messiri text-center shadow-2xl rounded-2xl h-40 hover:bg-green-300 hover:text-lg hover:font-bold">
-            <h1 className="py-16">3rd Semester</h1>
-          </div>
-          <div className="hover:animate-bounce bg-white font-messiri text-center shadow-2xl rounded-2xl h-40 hover:bg-green-300 hover:text-lg hover:font-bold">
-            <h1 className="py-16">4th Semester</h1>
-          </div>
-          <div className="hover:animate-bounce bg-white font-messiri text-center shadow-2xl rounded-2xl h-40 hover:bg-green-300 hover:text-lg hover:font-bold">
-            <h1 className="py-16">5th Semester</h1>
-          </div>
-          <div className="hover:animate-bounce bg-white font-messiri text-center shadow-2xl rounded-2xl h-40 hover:bg-green-300 hover:text-lg hover:font-bold">
-            <h1 className="py-16">6th Semester</h1>
-          </div>
-          <div className="hover:animate-bounce bg-white font-messiri text-center shadow-2xl rounded-2xl h-40 hover:bg-green-300 hover:text-lg hover:font-bold">
-            <h1 className="py-16">7th Semester</h1>
-          </div>
-          <div className="hover:animate-bounce bg-white font-messiri text-center shadow-2xl rounded-2xl h-40 hover:bg-green-300 hover:text-lg hover:font-bold">
-            <h1 className="py-16">8th Semester</h1>
-          </div>
         </div>
       </div>
-      <footer className="mt-5 border">
+      <footer className="mt-5">
         <div className="md:fixed inset-x-0 bottom-0 text-center p-4 text-gray-700">
           © 2022 Copyright
         </div>
