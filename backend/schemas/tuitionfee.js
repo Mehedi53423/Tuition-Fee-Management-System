@@ -41,8 +41,7 @@ export default {
     {
       name: "payed",
       title: "Payed",
-      type: "array",
-      of: [{ type: "payed" }],
+      type: "boolean",
     },
     {
       name: "created_at",

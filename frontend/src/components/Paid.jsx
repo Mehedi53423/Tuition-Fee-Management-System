@@ -1,21 +1,17 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import NavBar from "../components/NavBar";
-import Spinner from "../components/Spinner";
 
 const activeGreenBtnStyles =
   "transition ease-in-out delay-250 hover:-translate-y-1 hover:scale-110 duration-300 bg-green-500 hover:bg-green-600 mt-2 text-white font-bold p-3 rounded-full w-1/3 outline-none font-messiri";
 
-const activeRedBtnStyles =
-  "transition ease-in-out delay-250 hover:-translate-y-1 hover:scale-110 duration-300 bg-red-500 hover:bg-red-600 mt-2 text-white font-bold p-3 rounded-full w-1/3 outline-none font-messiri";
-  
 const notActiveBtnStyles =
   "transition ease-in-out delay-250  hover:-translate-y-1 hover:scale-110 duration-300 bg-primary mr-6 ml-6 mt-2 text-black font-bold p-3 rounded-full w-25 outline-none font-messiri";
 
-const Home = () => {
+const Paid = () => {
   const [tutionFees, setTutionFees] = useState();
-  const [text, setText] = useState("Not Paid");
-  const [activeBtn, setActiveBtn] = useState("Not Paid");
+  const [text, setText] = useState("Paid");
+  const [activeBtn, setActiveBtn] = useState("Paid");
   //const [tutionFeesNo, setTutionFeesNo] = useState();
   const [isPayed, setIsPayed] = useState();
   const [isLoading, setIsLoading] = useState(true);
@@ -25,45 +21,23 @@ const Home = () => {
     localStorage.getItem("user") !== "undefined"
       ? JSON.parse(localStorage.getItem("user"))
       : localStorage.clear();
-  
+
   const userid = User.userid;
 
-  if(User){
+  if (User) {
     fetch("/getFees?user=" + userid)
-    .then((res) => res.json())
-    .then((fees) => {
-      setTutionFees(fees[0].sessionName);
-      setIsPayed(fees[0].payed);
-      //setTutionFeesNo(fees.length);
-      //console.log(isPayed);
-    })
-  }
-  else{
+      .then((res) => res.json())
+      .then((fees) => {
+        setTutionFees(fees[0].sessionName);
+        setIsPayed(fees[0].payed);
+      });
+  } else {
     console.log("Error");
   }
 
   setTimeout(function () {
     setIsLoading(false);
   }, 5000);
-
-  // const products = ["orange", "apple", "watermelon"];
-
-  // const list = products.map((product) => <li key={product}>{product}</li>);
-
-  /*useEffect(() => {
-    const query = userQuery(userId);
-    client.fetch(query).then((data) => {
-      setUser(data[0]);
-    });
-  }, [userId]);*/
-
-  // useEffect(() => {
-  //   if (text === "Not Paid") {
-      
-  //   } else {
-      
-  //   }
-  // })
 
   return (
     <div className="bg-gray-50 h-screen">
@@ -87,10 +61,9 @@ const Home = () => {
             onClick={(e) => {
               setText(e.target.textContent);
               setActiveBtn("Not Paid");
+              navigate("/");
             }}
-            className={`${
-              activeBtn === "Not Paid" ? activeRedBtnStyles : notActiveBtnStyles
-            }`}
+            className={notActiveBtnStyles}
           >
             &#2547; Not Paid
           </button>
@@ -121,13 +94,13 @@ const Home = () => {
         ) : (
           <div className="grid md:grid-cols-3 gap-4 p-4">
             {isPayed ? (
-              <></>
-            ) : (
               <Link to="/TuitionDetail">
                 <div className="bg-white font-messiri text-center shadow-2xl rounded-2xl h-40 hover:bg-green-300 hover:text-lg hover:font-bold hover:animate-bounce">
                   <h1 className="py-16">{tutionFees}</h1>
                 </div>
               </Link>
+            ) : (
+              <></>
             )}
           </div>
         )}
@@ -141,4 +114,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Paid;

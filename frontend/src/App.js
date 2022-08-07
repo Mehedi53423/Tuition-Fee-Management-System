@@ -5,6 +5,7 @@ import UserProfile from "./components/UserProfile";
 import Home from "./container/Home";
 import TuitionDetail from "./components/TuitionDetail";
 import Success from "./components/Success";
+import Paid from "./components/Paid";
 
 const App = () => {
   const navigate = useNavigate();
@@ -22,6 +23,7 @@ const App = () => {
       <Route path="login" element={<Login />} />
       <Route path="UserProfile" element={<UserProfile />} />
       <Route path="TuitionDetail" element={<TuitionDetail />} />
+      <Route path="Paid" element={<Paid />} />
       <Route path="Success" element={<Success />} />
       <Route path="/*" element={<Home />} />
     </Routes>
