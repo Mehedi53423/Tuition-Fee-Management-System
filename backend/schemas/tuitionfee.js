@@ -34,11 +34,6 @@ export default {
       type: "string",
     },
     {
-      name: "postedBy",
-      title: "PostedBy",
-      type: "postedBy",
-    },
-    {
       name: "payed",
       title: "Payed",
       type: "boolean",

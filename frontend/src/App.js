@@ -4,6 +4,7 @@ import Login from "./components/Login";
 import UserProfile from "./components/UserProfile";
 import Home from "./container/Home";
 import TuitionDetail from "./components/TuitionDetail";
+import PaymentMethods from "./components/PaymentMethods";
 import Success from "./components/Success";
 import Paid from "./components/Paid";
 
@@ -24,6 +25,7 @@ const App = () => {
       <Route path="UserProfile" element={<UserProfile />} />
       <Route path="TuitionDetail" element={<TuitionDetail />} />
       <Route path="Paid" element={<Paid />} />
+      <Route path="PaymentMethods" element={<PaymentMethods />} />
       <Route path="Success" element={<Success />} />
       <Route path="/*" element={<Home />} />
     </Routes>

@@ -21,7 +21,10 @@ const TuitionDetail = () => {
   function handlePayment(){
     setPaied(true);
     setTimeout(function () {
-      navigate("/Success");
+      // fetch("/payFee?user=" + userid).then((res) => res.json()).then((data) => {
+      //   console.log("Done");
+      // })
+      navigate("/PaymentMethods");
     }, 5000);
   }
 
@@ -110,7 +113,7 @@ const TuitionDetail = () => {
             </svg>
             {paied ? (
               <>
-                Paying...
+                Processing...
                 <svg
                   className="spinner-border animate-spin inline-block w-5 h-5 ml-4 border-4 border-x-green-500 border-b-green-500 hover:border-t-green-500 hover:border-x-white hover:border-b-white rounded-full"
                   viewBox="0 0 24 24"

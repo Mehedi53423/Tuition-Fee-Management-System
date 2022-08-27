@@ -109,7 +109,7 @@ const Home = () => {
         </div>
 
         {isLoading ? (
-          <div class="text-center font-messiri text-2xl mt-80">
+          <div className="text-center font-messiri text-2xl mt-80">
             <svg
               className="spinner-border m-2 animate-spin inline-block w-5 h-5 ml-4 border-4 border-x-green-500 border-b-green-500 hover:border-t-green-500 hover:border-x-white hover:border-b-white rounded-full"
               viewBox="0 0 24 24"
