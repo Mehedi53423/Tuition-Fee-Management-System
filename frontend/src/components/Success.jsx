@@ -1,6 +1,8 @@
-import { React } from "react";
+import { React, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-//import { runFireworks } from "../utils/confetti";
+import { runFireworks } from "../utils/confetti";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Success = () => {
   const User =
@@ -14,11 +16,14 @@ const Success = () => {
   const tutionFeeType = sessionStorage.getItem("tutionFeeType");
   const fee = sessionStorage.getItem("fee");
 
+  const notify = () => toast.success("Your Payment Was Successful");
+
   const navigate = useNavigate();
 
-  // useEffect(() => {
-  //   runFireworks();
-  // })
+  useEffect(() => {
+    runFireworks();
+    notify();
+  })
 
   function homePage(){
     navigate("/");
@@ -48,13 +53,13 @@ const Success = () => {
           </svg>
         </div>
         <div className="text-4xl text-center font-messiri p-4">
-          Your Payment Was Successfull
+          Your Payment Was Successful
         </div>
         <h2 className="text-3xl font-bold text-center font-messiri">
           {tutionFeeType}
         </h2>
         <div className="flex justify-center items-center font-messiri mt-6 mb-10">
-          <table className="text-2xl w-3/5">
+          <table className="text-2xl w-4/5">
             <tr>
               <td className="">
                 <h2 className="font-bold">Name</h2>
@@ -158,6 +163,17 @@ const Success = () => {
           </button>
         </div>
       </div>
+      <ToastContainer
+        position="bottom-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </div>
   );
 }
