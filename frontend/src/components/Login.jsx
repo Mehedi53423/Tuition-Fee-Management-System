@@ -1,6 +1,6 @@
 import { React, useState} from "react";
 import { useNavigate } from "react-router-dom";
-import Logo from "../assets/Logo.png"
+// import Logo from "../assets/Logo.png"
 
 const Login = () => {
   const [userid, setUserId] = useState("");
@@ -34,7 +34,7 @@ const Login = () => {
     <div className="flex justify-start items-center flex-col h-screen bg-gradient-to-r from-cyan-500 to-blue-500">
       <div className="relative w-full h-full">
         <div className="absolute flex flex-col justify-center items-center top-0 right-0 left-0 bottom-0">
-          <img src={Logo} alt="Logo" />
+          {/* <img src={Logo} alt="Logo" /> */}
           <div className="p-12">
             <b>
               <h1 className="text-6xl text-white font-messiri">

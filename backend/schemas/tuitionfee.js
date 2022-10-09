@@ -4,34 +4,34 @@ export default {
   type: "document",
   fields: [
     {
-      name: "sessionName",
-      title: "Session Name",
+      name: "tutionFeeHeader",
+      title: "Tution Fee Header",
       type: "string",
     },
     {
-      name: "semesterNo",
-      title: "Semester No",
+      name: "monthName",
+      title: "Month Name",
       type: "string",
     },
     {
-      name: "semesterFee",
-      title: "Semester Fee",
-      type: "number",
-    },
-    {
-      name: "tuitionFeeOfSession",
-      title: "Tuition Fee",
-      type: "number",
-    },
-    {
-      name: "totalFee",
-      title: "Total Fee",
-      type: "number",
+      name: "tutionFeeType",
+      title: "Tution Fee Type",
+      type: "string",
     },
     {
       name: "userid",
       title: "User Id",
       type: "string",
+    },
+    {
+      name: "department",
+      title: "Department",
+      type: "string",
+    },
+    {
+      name: "fee",
+      title: "Fee",
+      type: "number",
     },
     {
       name: "payed",

@@ -2,7 +2,7 @@ import bodyParser from "body-parser";
 import express from "express";
 import functions from "./apiCalls.js";
 
-const { getProfile, getFees } = functions;
+const { getProfile, getFees, payFee } = functions;
 
 const app = express();
 
@@ -17,6 +17,11 @@ app.get("/getProfile", (req, res) => {
 app.get("/getFees", (req, res) => {
   const user = req.query.user;
   getFees(user).then((data) => res.json(data));
+});
+
+app.post("/payFee", (req, res) => {
+  const payed = req.query.payed;
+  payFee(payed).then((data) => res.json(data));
 });
 
 app.listen(3001, () => console.log("started"));

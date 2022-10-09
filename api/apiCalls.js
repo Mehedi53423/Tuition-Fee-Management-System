@@ -26,8 +26,8 @@ functions.getFees = (user) => {
   );
 };
 
-functions.payFee = () => {
-  return sanityClient.patch().set({ payed: true }).commit();
+functions.payFee = (id) => {
+  return sanityClient.patch(id).set({ payed: true }).commit();
 };
 
 export default functions;

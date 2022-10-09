@@ -1,26 +1,24 @@
-import { React, useEffect, useState } from "react";
+import { React } from "react";
 import { useNavigate } from "react-router-dom";
-import { runFireworks } from "../utils/confetti";
+//import { runFireworks } from "../utils/confetti";
 
 const Success = () => {
-  const [sessionName, setsessionName] = useState();
-  const [semesterNo, setSemesterNo] = useState();
-  const [semesterFee, setSemesterFee] = useState();
-  const [tutionFee, setTutionFee] = useState();
-  const [totalFee, setTotalFee] = useState();
-
   const User =
     localStorage.getItem("user") !== "undefined"
       ? JSON.parse(localStorage.getItem("user"))
       : localStorage.clear();
-  
-  const userid = User.userid;
+
+  const paymentNumber = sessionStorage.getItem("payment");
+  const method = sessionStorage.getItem("method");
+  const monthName = sessionStorage.getItem("monthName");
+  const tutionFeeType = sessionStorage.getItem("tutionFeeType");
+  const fee = sessionStorage.getItem("fee");
 
   const navigate = useNavigate();
 
-  useEffect(() => {
-    runFireworks();
-  })
+  // useEffect(() => {
+  //   runFireworks();
+  // })
 
   function homePage(){
     navigate("/");
@@ -28,20 +26,6 @@ const Success = () => {
 
   function print() {
     window.print();
-  }
-
-  if (User) {
-    fetch("/getFees?user=" + userid)
-      .then((res) => res.json())
-      .then((fees) => {
-        setsessionName(fees[0].sessionName);
-        setSemesterNo(fees[0].semesterNo);
-        setSemesterFee(fees[0].semesterFee);
-        setTutionFee(fees[0].tuitionFeeOfSession);
-        setTotalFee(fees[0].totalFee);
-      });
-  } else {
-    console.log("Error");
   }
 
   return (
@@ -67,40 +51,64 @@ const Success = () => {
           Your Payment Was Successfull
         </div>
         <h2 className="text-3xl font-bold text-center font-messiri">
-          {sessionName}
+          {tutionFeeType}
         </h2>
         <div className="flex justify-center items-center font-messiri mt-6 mb-10">
           <table className="text-2xl w-3/5">
             <tr>
               <td className="">
-                <h2 className="font-bold">Semester No.</h2>
+                <h2 className="font-bold">Name</h2>
               </td>
               <td>
-                <h2 className="">: {semesterNo}</h2>
+                <h2 className="">: {User.studentName}</h2>
+              </td>
+            </tr>
+            <tr>
+              <td className="">
+                <h2 className="font-bold">Id</h2>
+              </td>
+              <td>
+                <h2 className="">: {User.userid}</h2>
               </td>
             </tr>
             <tr>
               <td>
-                <h2 className="font-bold">Tuition Fee</h2>
+                <h2 className="font-bold">Department</h2>
               </td>
               <td>
-                <h2>: {tutionFee} &#2547;</h2>
-              </td>
-            </tr>
-            <tr className="border-b">
-              <td>
-                <h2 className="font-bold">Semester Fee</h2>
-              </td>
-              <td>
-                <h2>: {semesterFee} &#2547;</h2>
+                <h2>: {User.department}</h2>
               </td>
             </tr>
             <tr>
               <td>
-                <h2 className="font-bold">Total</h2>
+                <h2 className="font-bold">Month Name</h2>
               </td>
               <td>
-                <h2>: {totalFee} &#2547;</h2>
+                <h2>: {monthName}</h2>
+              </td>
+            </tr>
+            <tr className="">
+              <td>
+                <h2 className="font-bold">Fee</h2>
+              </td>
+              <td>
+                <h2>: {fee} &#2547;</h2>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h2 className="font-bold">Payment Method</h2>
+              </td>
+              <td>
+                <h2>: {method}</h2>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h2 className="font-bold">Payment Number</h2>
+              </td>
+              <td>
+                <h2>: {paymentNumber}</h2>
               </td>
             </tr>
           </table>
